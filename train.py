@@ -55,19 +55,19 @@ def main():
     run.log("Max iterations:", np.int(args.max_iter))
 
     # TODO: Create TabularDataset using TabularDatasetFactory
-	# Data is located at:
-	# "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+    # Data is located at:
+    # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
-	#ds = ### YOUR CODE HERE ###
-	ds = TabularDatasetFactory.from_delimited_files(path = 
-		"https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv")
-	
-	x, y = clean_data(ds)
+    #ds = ### YOUR CODE HERE ###
+    ds = TabularDatasetFactory.from_delimited_files(path = 
+    "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv")
+    
+    x, y = clean_data(ds)
 
-	# TODO: Split data into train and test sets.
+    # TODO: Split data into train and test sets.
 
-	### YOUR CODE HERE ###a
-	x_train, x_test, y_train, y_test = train_test_split(x, y, test_size =0.2, random_state=223)
+    ### YOUR CODE HERE ###a
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size =0.2, random_state=223)
 
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
@@ -77,7 +77,7 @@ def main():
     os.makedirs('outputs', exist_ok = True)
 
     
-    joblib.dump(value = model, filename= 'outputs/model.pkl')
-	
+    joblib.dump(value = model, filename= 'outputs/model.joblib')
+
 if __name__ == '__main__':
     main()
