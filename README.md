@@ -44,7 +44,7 @@ In future experiments for azure ml using Python SDK I would like to try out othe
 ## Proof of cluster clean up
 Compute cluster was deleted.
 
-##Resources: Udacity course material and Microsoft Docs.
+## Resources: Udacity course material and Microsoft Docs.
 
 ```
 
